@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const JoinedAuction = require('../models/JoinedAuction');
 const Leaderboard = require('../models/Leaderboard');
 const { Singup } = require('../controller/signup');
-const { Login } = require('../controller/login');
+const { Login, ForgotPassword } = require('../controller/login');
 const { 
   AddProduct, 
   AllProduct, 
@@ -93,6 +93,8 @@ router.delete('/users/:id', handleDeleteUser);
 // User Authentication
 router.post('/register', Singup);
 router.post('/login', Login);
+router.post('/forgot-password', ForgotPassword);
+router.post('/reset-password', ForgotPassword);
 
 // ======================== PRODUCT ROUTES ========================
 
